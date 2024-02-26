@@ -11,18 +11,17 @@
 </p>
 
 <p align="center">
-   <a href="https://github.com/LLM360/Analysis360/blob/dev/LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="license"></a>
+   <a href="https://github.com/mbzuai-oryx/MobiLlama/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="license"></a>
 </p>
 
+#### [Omkar Thawakar](https://scholar.google.com/citations?user=jLNKLsgAAAAJ&hl=en&oi=ao), [Ashmal Vayani](https://scholar.google.com/citations?user=LJWxVpUAAAAJ&hl=en), [Salman Khan](https://salman-h-khan.github.io/), [Hisham Cholakkal](https://scholar.google.com/citations?hl=en&user=bZ3YBRcAAAAJ), [Rao Muhammad Anwer](https://scholar.google.com/citations?hl=en&authuser=1&user=_KlvMVoAAAAJ), [Michael Felsberg](https://scholar.google.com/citations?user=lkWfR08AAAAJ&hl=en), [Timothy  Baldwin](https://scholar.google.com/citations?user=wjBD1dkAAAAJ&hl=en), [Eric Xing](https://scholar.google.com/citations?user=5pKTRxEAAAAJ&hl=en) and [Fahad Khan](https://sites.google.com/view/fahadkhans/home)
+
+#### **Mohamed Bin Zayed University of Artificial Intelligence (MBZUAI), UAE**
+
 [![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2402.14818)
-🤗 <a href="https://huggingface.co/MBZUAI/MobiLlama">[MobiLlama Download]</a> 
-🤗 <a href="https://huggingface.co/MBZUAI/MobiLlama">[MobiLlamaChat Download]</a> 
+🤗 [![HuggingFace](https://img.shields.io/badge/HuggingFace-Page-F9D371)](https://huggingface.co/MBZUAI/MobiLlama)
 🤗 <a href="https://huggingface.co/datasets/LLM360/AmberDatasets">[Pretraining Dataset Download]</a> 
 
-
-
-
-<p>Small Language Model tailored for  mobile devices, with a focus on efficiency and accuracy.</p>
 ---
 
 ## 📢 Latest Updates
@@ -38,6 +37,16 @@ This paper explores the `less is more` paradigm by addressing the challenge of d
 Our primary contribution is the introduction of an accurate and fully transparent open-source 0.5 billion (0.5B) parameter SLM, named `MobiLlama`, catering to the specific needs of resource-constrained computing with an emphasis on enhanced performance with reduced resource demands.
 `MobiLlama` is a SLM design that initiates from a larger model and applies a careful parameter sharing scheme to reduce both the pre-training and the deployment cost.
 
+## ⚡ Model Download
+             
+| Model Name           | Link Download                                  |
+|-----------------------------------------------------|----------------------------------------------------------------------|
+| MobiLlama-05B           | [HuggingFace](https://huggingface.co/MBZUAI/MobiLlama-05B)  |
+| MobiLlama-08B           | [HuggingFace](https://huggingface.co/MBZUAI/MobiLlama-08B) |
+| MobiLlama-1B            | [HuggingFace](https://huggingface.co/MBZUAI/MobiLlama-1B) |
+| MobiLlama-05B-Chat      | [HuggingFace](https://huggingface.co/MBZUAI/MobiLlama-05B-Chat) |
+| MobiLlama-1B-Chat       | [HuggingFace](https://huggingface.co/MBZUAI/MobiLlama-1B-Chat) |
+
 ## Model Description
 
 - **Model type:** Language model designed using the architecture of LLaMA-7B
@@ -47,7 +56,7 @@ Our primary contribution is the introduction of an accurate and fully transparen
   - [Training Code](https://github.com/mbzuai-oryx/MobiLlama)
   - [Data Preparation](https://github.com/LLM360/amber-data-prep)
   - [Metrics]()
-  - [Fully processed Amber pretraining data]()
+  - [Fully processed Amber pretraining data](https://huggingface.co/datasets/LLM360/AmberDatasets)
 
 
 # Loading MobiLlama 
@@ -55,8 +64,8 @@ Our primary contribution is the introduction of an accurate and fully transparen
 ```python
 from .model_utils.modeling_mobillama import LlamaTokenizer, LlamaForCausalLM
 
-tokenizer = LlamaTokenizer.from_pretrained("MBZUAI/MobiLlama-05B", revision="ckpt_356")
-model = LlamaForCausalLM.from_pretrained("MBZUAI/MobiLlama-05B", revision="ckpt_356")
+tokenizer = LlamaTokenizer.from_pretrained("MBZUAI/MobiLlama-05B")
+model = LlamaForCausalLM.from_pretrained("MBZUAI/MobiLlama-05B")
 
 input_text = "translate English to German: How old are you?"
 input_ids = tokenizer(input_text, return_tensors="pt").input_ids
@@ -64,6 +73,21 @@ input_ids = tokenizer(input_text, return_tensors="pt").input_ids
 outputs = model.generate(input_ids)
 print(tokenizer.decode(outputs[0]))
 ```
+
+## Dataset
+
+Download the preprocessed Amber data from [huggingface](https://huggingface.co/datasets/LLM360/AmberDatasets). The entire training data has 360 chunks totalling the size of ~8 TB. Amber dataset contains total 1.2 Trillion tokens with gathered from different data sources shown below.
+
+| Subset      | Tokens (Billion) |
+| ----------- | ----------- |
+| Arxiv      | 30.00       |
+| Book   | 28.86        |
+| C4   | 197.67        |
+| Refined-Web   | 665.01        |
+| StarCoder   | 291.92        |
+| StackExchange   | 21.75        |
+| Wikipedia   | 23.90        |
+| Total | 1259.13 | 
 
 ## Installation
 
@@ -86,7 +110,13 @@ sbatch pretrain.sh
 ```
 For `large-base` use main_largebase.py in L:11 of pretrain.sh
 
-## 📚 Results
+## 🔎 Evaluation
+
+We used [Analysis-360](https://github.com/LLM360/Analysis360) to evaluate our model on different llm benchmarks. 
+
+
+
+## 📊  Results
 
 | Model Name         | #Params | HellaSwag | Truthfulqa | MMLU  | Arc_C | CrowsPairs | piqa  | race  | siqa  | winogrande | Average |
 |--------------------|---------|-----------|------------|-------|-------|------------|-------|-------|-------|------------|---------|
@@ -124,9 +154,13 @@ For `large-base` use main_largebase.py in L:11 of pretrain.sh
 
 `Comprehensive comparisons with existing < 2B params fully open-source LLM models on 9 benchmarks. Our 1.2B "large-base" model pre-trained on 1.2T tokens achieves superior performance compared to both the recent OLMo 1.17B model and TinyLlama 1.1B model, which are pre-trained on a substantially larger data of 3T tokens.`
 
-## Acknowledgement
+## 📱 MobiLlama on Android
 
-+ [LLM-360](https://github.com/LLM360/amber-train) Amber: the first model of LLM360 
+To run our  model on an android app, please download  and install the APK from [here](https://mbzuaiac-my.sharepoint.com/:f:/g/personal/omkar_thawakar_mbzuai_ac_ae/EhRfGdmgFVVNvIRfy1EgLwEBjbk_eg3UmNg_zjz7PMTsmg?e=NBuJo8). 
+
+## 🙏 Acknowledgements
+
++ We thank [LLM-360](https://github.com/LLM360/amber-train) for fully transparent and open-source implementation of their language model. MobiLlama repo is built using [LLM-360](https://github.com/LLM360/amber-train). 
 
 
 ## 📜 Citation
