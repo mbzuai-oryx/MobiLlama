@@ -18,7 +18,7 @@
 
 #### **Mohamed Bin Zayed University of Artificial Intelligence (MBZUAI), UAE**
 
-[![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/)
+[![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2402.16840)
 🤗 [![HuggingFace](https://img.shields.io/badge/HuggingFace-Page-F9D371)](https://huggingface.co/collections/MBZUAI/mobillama-65dd4182d588c91e8230332e)
 [![Demo](https://img.shields.io/badge/Gradio-Demo-red)](https://845b645234785da51b.gradio.live/)
 
@@ -70,17 +70,24 @@ Our primary contribution is the introduction of an accurate and fully transparen
 # Loading MobiLlama 
 
 ```python
-from .model_utils.modeling_mobillama import LlamaTokenizer, LlamaForCausalLM
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
-tokenizer = LlamaTokenizer.from_pretrained("MBZUAI/MobiLlama-05B")
-model = LlamaForCausalLM.from_pretrained("MBZUAI/MobiLlama-05B")
+model = AutoModelForCausalLM.from_pretrained("MBZUAI/MobiLlama-05B", trust_remote_code=True)
+tokenizer = AutoTokenizer.from_pretrained("MBZUAI/MobiLlama-05B", trust_remote_code=True)
 
-input_text = "translate English to German: How old are you?"
-input_ids = tokenizer(input_text, return_tensors="pt").input_ids
-
-outputs = model.generate(input_ids)
-print(tokenizer.decode(outputs[0]))
+model.to('cuda')
+text = "I was walking towards the river when "
+input_ids = tokenizer(text, return_tensors="pt").to('cuda').input_ids
+outputs = model.generate(input_ids, max_length=1000, repetition_penalty=1.2, pad_token_id=tokenizer.eos_token_id)
+print(tokenizer.batch_decode(outputs[:, input_ids.shape[1]:-1])[0].strip())
 ```
+
+## Load intermediate Checkpoints 
+
+```python
+model = AutoModelForCausalLM.from_pretrained("MBZUAI/MobiLlama-05B", revision="ckpt_352", trust_remote_code=True)
+```
+All the intermediate checkpoints are available from ckpt_100 to ckpt_358. 
 
 ## Dataset
 
@@ -176,6 +183,9 @@ To run our  model on an android app, please download  and install the APK from [
 @misc{thawakar2024mobillama,
       title={MobiLlama: Towards Accurate and Lightweight Fully Transparent GPT}, 
       author={Omkar Thawakar and Ashmal Vayani and Salman Khan and Hisham Cholakkal and Rao Muhammad Anwer and Michael Felsberg and Timothy Baldwin and Eric P. Xing and Fahad Shahbaz Khan},
-      year={2024}
+      year={2024},
+      eprint={2402.16840},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
 } 
 ```
