@@ -18,7 +18,7 @@
 
 #### **Mohamed Bin Zayed University of Artificial Intelligence (MBZUAI), UAE**
 
-[![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2402.14818)
+[![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/)
 🤗 [![HuggingFace](https://img.shields.io/badge/HuggingFace-Page-F9D371)](https://huggingface.co/collections/MBZUAI/mobillama-65dd4182d588c91e8230332e)
 [![Demo](https://img.shields.io/badge/Gradio-Demo-red)](https://845b645234785da51b.gradio.live/)
 
