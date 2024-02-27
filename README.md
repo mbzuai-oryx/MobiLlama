@@ -16,7 +16,7 @@
 
 #### [Omkar Thawakar](https://scholar.google.com/citations?user=flvl5YQAAAAJ&hl=en), [Ashmal Vayani](https://www.linkedin.com/in/ashmal-vayani/), [Salman Khan](https://salman-h-khan.github.io/), [Hisham Cholakkal](https://scholar.google.com/citations?hl=en&user=bZ3YBRcAAAAJ), [Rao Muhammad Anwer](https://scholar.google.com/citations?hl=en&authuser=1&user=_KlvMVoAAAAJ), [Michael Felsberg](https://scholar.google.com/citations?user=lkWfR08AAAAJ&hl=en), [Timothy  Baldwin](https://scholar.google.com/citations?user=wjBD1dkAAAAJ&hl=en), [Eric Xing](https://scholar.google.com/citations?user=5pKTRxEAAAAJ&hl=en) and [Fahad Khan](https://sites.google.com/view/fahadkhans/home)
 
-#### **Mohamed Bin Zayed University of Artificial Intelligence (MBZUAI), UAE**
+#### **Mohamed Bin Zayed University of Artificial Intelligence (MBZUAI), UAE** and Linköping University, Sweden
 
 [![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2402.16840)
 🤗 [![HuggingFace](https://img.shields.io/badge/HuggingFace-Page-F9D371)](https://huggingface.co/collections/MBZUAI/mobillama-65dd4182d588c91e8230332e)
