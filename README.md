@@ -82,6 +82,13 @@ outputs = model.generate(input_ids, max_length=1000, repetition_penalty=1.2, pad
 print(tokenizer.batch_decode(outputs[:, input_ids.shape[1]:-1])[0].strip())
 ```
 
+## Load intermediate Checkpoints 
+
+```python
+model = AutoModelForCausalLM.from_pretrained("MBZUAI/MobiLlama-05B", revision="ckpt_352", trust_remote_code=True)
+```
+All the intermediate checkpoints are available from ckpt_100 to ckpt_358. 
+
 ## Dataset
 
 Download the preprocessed Amber data from [huggingface](https://huggingface.co/datasets/LLM360/AmberDatasets). The entire training data has 360 chunks totalling the size of ~8 TB. Amber dataset contains total 1.2 Trillion tokens with gathered from different data sources shown below.
@@ -176,6 +183,9 @@ To run our  model on an android app, please download  and install the APK from [
 @misc{thawakar2024mobillama,
       title={MobiLlama: Towards Accurate and Lightweight Fully Transparent GPT}, 
       author={Omkar Thawakar and Ashmal Vayani and Salman Khan and Hisham Cholakkal and Rao Muhammad Anwer and Michael Felsberg and Timothy Baldwin and Eric P. Xing and Fahad Shahbaz Khan},
-      year={2024}
+      year={2024},
+      eprint={2402.16840},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
 } 
 ```
