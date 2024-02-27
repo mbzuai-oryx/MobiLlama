@@ -14,19 +14,20 @@
    <a href="https://github.com/mbzuai-oryx/MobiLlama/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="license"></a>
 </p>
 
-#### [Omkar Thawakar](https://scholar.google.com/citations?user=jLNKLsgAAAAJ&hl=en&oi=ao), [Ashmal Vayani](https://scholar.google.com/citations?user=LJWxVpUAAAAJ&hl=en), [Salman Khan](https://salman-h-khan.github.io/), [Hisham Cholakkal](https://scholar.google.com/citations?hl=en&user=bZ3YBRcAAAAJ), [Rao Muhammad Anwer](https://scholar.google.com/citations?hl=en&authuser=1&user=_KlvMVoAAAAJ), [Michael Felsberg](https://scholar.google.com/citations?user=lkWfR08AAAAJ&hl=en), [Timothy  Baldwin](https://scholar.google.com/citations?user=wjBD1dkAAAAJ&hl=en), [Eric Xing](https://scholar.google.com/citations?user=5pKTRxEAAAAJ&hl=en) and [Fahad Khan](https://sites.google.com/view/fahadkhans/home)
+#### [Omkar Thawakar](https://scholar.google.com/citations?user=flvl5YQAAAAJ&hl=en), [Ashmal Vayani](https://www.linkedin.com/in/ashmal-vayani/), [Salman Khan](https://salman-h-khan.github.io/), [Hisham Cholakkal](https://scholar.google.com/citations?hl=en&user=bZ3YBRcAAAAJ), [Rao Muhammad Anwer](https://scholar.google.com/citations?hl=en&authuser=1&user=_KlvMVoAAAAJ), [Michael Felsberg](https://scholar.google.com/citations?user=lkWfR08AAAAJ&hl=en), [Timothy  Baldwin](https://scholar.google.com/citations?user=wjBD1dkAAAAJ&hl=en), [Eric Xing](https://scholar.google.com/citations?user=5pKTRxEAAAAJ&hl=en) and [Fahad Khan](https://sites.google.com/view/fahadkhans/home)
 
 #### **Mohamed Bin Zayed University of Artificial Intelligence (MBZUAI), UAE**
 
 [![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2402.14818)
-🤗 [![HuggingFace](https://img.shields.io/badge/HuggingFace-Page-F9D371)](https://huggingface.co/MBZUAI/MobiLlama)
-🤗 <a href="https://huggingface.co/datasets/LLM360/AmberDatasets">[Pretraining Dataset Download]</a> 
+🤗 [![HuggingFace](https://img.shields.io/badge/HuggingFace-Page-F9D371)](https://huggingface.co/collections/MBZUAI/mobillama-65dd4182d588c91e8230332e)
+[![Demo](https://img.shields.io/badge/Gradio-Demo-red)](https://845b645234785da51b.gradio.live/)
 
 ---
 
 ## 📢 Latest Updates
 - **Feb-26-24**- Arxiv Preprint is released!
 - **Feb-25-24**- Code (Training and Evaluation scripts) is released!
+- **Feb-25-24**- Final pre-trained models (including intermediate checkpoints) and chat version along with online demo links released! 
 
 
 ## Overview
@@ -46,6 +47,13 @@ Our primary contribution is the introduction of an accurate and fully transparen
 | MobiLlama-1B            | [HuggingFace](https://huggingface.co/MBZUAI/MobiLlama-1B) |
 | MobiLlama-05B-Chat      | [HuggingFace](https://huggingface.co/MBZUAI/MobiLlama-05B-Chat) |
 | MobiLlama-1B-Chat       | [HuggingFace](https://huggingface.co/MBZUAI/MobiLlama-1B-Chat) |
+
+
+## Generation with MobiLlama
+
+<p align="center">
+   <img src="images/mobillama_generation.gif"/>
+</p>
 
 ## Model Description
 
@@ -165,5 +173,9 @@ To run our  model on an android app, please download  and install the APK from [
 
 ## 📜 Citation
 ```bibtex
-coming soon !
+@misc{thawakar2024mobillama,
+      title={MobiLlama: Towards Accurate and Lightweight Fully Transparent GPT}, 
+      author={Omkar Thawakar and Ashmal Vayani and Salman Khan and Hisham Cholakkal and Rao Muhammad Anwer and Michael Felsberg and Timothy Baldwin and Eric P. Xing and Fahad Shahbaz Khan},
+      year={2024}
+} 
 ```
