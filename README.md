@@ -112,7 +112,7 @@ To install from source (recommended for training/fine-tuning) run:
 
 ```bash
 conda create -n mobillama python=3.10
-conda activate mibillama
+conda activate mobillama
 git clone https://github.com/mbzuai-oryx/MobiLlama.git
 cd MobiLlama
 pip install -r  requirements.txt
