@@ -1,7 +1,4 @@
 <br>
-<p align="center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9NSlqpWqYLg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</p>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe 
@@ -31,9 +28,9 @@
 ![main figure](docs/Model_Comparisions.png)
 <p align="justify">State-of-the-art comparisons with existing < 1B params models on nine benchmarks. In case of around 0.5B model series, our MobiLlama achieves a substantial gain of 2.4% in terms of average performance on nine benchmarks. Further, our MobiLlama 0.8B model achieves an average score of 46.67. </p>
 
-<p align="center">
-   <img src="docs/rado_plot_comparison.png"/>
-</p>
+<br>
+<p align="center"><img src="docs/radar_plot.png"/></p>
+<p align="justify"> Comparison of our MobiLlama 0.5B and 0.8B models with recent OLMo-1.17B and TinyLlama-1.1B in terms of pre-training tokens, pre-training time and memory, model parameters, overall accuracy across nine benchmarks and on-device efficiency (average battery consumption and average token/second on a PC with RTX2080Ti). Our  \emph{MobiLlama} achieves comparable accuracy while requiring significantly fewer pre-training data (1.2T tokens vs. 3T tokens), lesser pre-training time and GPU memory along with being efficient in terms of deployment on a resource constrained device. </p>
 
 
 ## Qualitative Examples of MobiLlama
