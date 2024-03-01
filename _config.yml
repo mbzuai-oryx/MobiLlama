@@ -1,3 +1,3 @@
 theme: jekyll-theme-cayman
 title: MobiLlama
-description: An end-to-end <br>Open Source Model</b> that is designed to cater accurate yet efficient language model for resource-constrained devices. <br> MobiLlama mitigates the redundancy in transformer blocks by proposing a shared FFN design for all the transformer blocks within the Small Language Model.
+description: An end-to-end <b>Open Source Model</b> that is designed to cater accurate yet efficient language model for resource-constrained devices. <br> MobiLlama mitigates the redundancy in transformer blocks by proposing a shared FFN design for all the transformer blocks within the Small Language Model.
