@@ -1,4 +1,4 @@
-# 📱🦙 MobiLlama: Towards Accurate and Lightweight Fully Transparent GPT
+# 📱🦙 MobiLlama: Towards Accurate and Lightweight Fully Transparent GPT (🔥 ICLR'25 SLLM Workshop - SPOTLIGHT)
 
 
 
@@ -25,6 +25,7 @@
 ---
 
 ## 📢 Latest Updates
+- **Mar-05-25**- Mobillama is accepted as Spotlight paper at ICLR'2025 SLLM Workshop
 - **Feb-26-24**- Arxiv Preprint is released!
 - **Feb-25-24**- Code (Training and Evaluation scripts) is released!
 - **Feb-25-24**- Final pre-trained models (including intermediate checkpoints) and chat version along with online demo links released! 
